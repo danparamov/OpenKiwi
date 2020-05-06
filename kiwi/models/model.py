@@ -204,7 +204,7 @@ class Model(nn.Module):
                 mask &= torch.as_tensor(
                     input_tensor != pad_id,
                     device=mask.device,
-                    dtype=torch.uint8,
+                    dtype=torch.cuda.CharTensor,
                 )
 
         return mask
