@@ -15,3 +15,13 @@
 4. Run the QE WMT20.ipynb
 
 5. If you are using GPU, don't foget to change the %%yaml train_predictor at the last line "gpu-id: 1"
+
+## If interested on connecting Google Colab to Google Cloud follow these steps:
+
+1. https://medium.com/@senthilnathangautham/colab-gcp-compute-how-to-link-them-together-98747e8d940e
+2. Machine type `n1-standard-8 (8 vCPUs, 30 GB memory)`
+3. Image c2-deeplearning-pytorch-1-3-cu100-20191219
+4. Made some changes in Step 3: Connect to your server and forward our port:
+`gcloud compute ssh --zone us-central1-a instance-4 -- -L 8081:localhost:8081`
+5. Made some changes in Step 4: Run a Jupyter Notebook server on your instance
+`jupyter notebook --NotebookApp.allow_origin="https://colab.research.google.com" --port=8081 --NotebookApp.port_retries=0 --no-browser`
