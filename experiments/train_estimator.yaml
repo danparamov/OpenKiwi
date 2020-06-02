@@ -1,9 +1,10 @@
+%%yaml train_estimator
 ### Train Predictor Estimator ###
 
 model: estimator
 
 # Model Files will be saved here
-output-dir: runs/estimator
+output-dir: /OpenKiwi/runs/estimator
 
 #### MODEL SPECIFIC OPTS ####
 
@@ -26,10 +27,10 @@ mlp-est: True
 # Using the SRC, PE pair and add the `Predictor` loss for the tokens in the
 # postedited text PE. Recommended if you have access to PE
 # Requires setting train-pe, valid-pe
-token-level: True
+token-level: False
 # Predict Sentence Level Scores
 # Requires setting train-sentence-scores, valid-sentence-scores
-sentence-level: False
+sentence-level: True
 # Use probabilistic Loss for sentence scores instead of squared error.
 # If set, the model will output mean and variance of a truncated Gaussian
 # distribution over the interval [0, 1], and use log-likelihood loss instead
@@ -40,10 +41,10 @@ sentence-ll: False
 # Requires setting train-sentence-scores, valid-sentence-scores
 binary-level: False
 
-# WMT 18 Format Settings #
+# WMT 20 Format Settings #
 
 # Predict target tags. Requires train-target-tags, valid-target-tags to be set.
-predict-target: true
+predict-target: false
 target-bad-weight: 2.5
 # Predict source tags. Requires train-source-tags, valid-source-tags to be set.
 predict-source: false
@@ -72,10 +73,10 @@ checkpoint-early-stop-patience: 0
 log-interval: 100
 # LR. Currently ADAM is only optimizer supported.
 # 1e-3 * (batch_size / 32) seems to work well
-learning-rate: 2e-3
+learning-rate: 1e-3
 
-train-batch-size: 64
-valid-batch-size: 64
+train-batch-size: 8
+valid-batch-size: 8
 
 
 
@@ -94,29 +95,30 @@ valid-batch-size: 64
 
 # load-model: path_to_estimator
 # load-pred-source: path_to_predictor_source_target
-load-pred-target: runs/predictor/best_model.torch
+load-pred-target: ./OpenKiwi/runs/predictor/best_model.torch
 
 
 ###  DATA ###
 
-# Set to True to use target_tags in WMT18 format
-wmt18-format: false
+# Set to True to use target_tags in WMT format
+wmt20-format: false
 
-train-source: data/WMT17/word_level/train.src
-train-target: data/WMT17/word_level/train.mt
-train-pe: data/WMT17/word_level/train.pe
-train-target-tags: data/WMT17/word_level/train.tags
+train-source: ./OpenKiwi/data/traindev/wmt20_train.en
+train-target: ./OpenKiwi/data/traindev/wmt20_train.de
+# train-pe: /content/drive/My Drive/Proyectos/Machine Learning/Colab Notebooks/data/train.pe
+# train-target-tags: /content/drive/My Drive/Proyectos/Machine Learning/Colab Notebooks/data/train.tags
+train-sentence-scores: ./OpenKiwi/data/traindev/wmt20_train.hter_avg
 
 
-valid-source: data/WMT17/word_level/dev.src
-valid-target: data/WMT17/word_level/dev.mt
-valid-pe: data/WMT17/word_level/dev.pe
-valid-target-tags: data/WMT17/word_level/dev.tags
-
+valid-source: ./OpenKiwi/data/traindev/wmt20_dev.en
+valid-target: ./OpenKiwi/data/traindev/wmt20_dev.de
+# valid-pe: /content/drive/My Drive/Proyectos/Machine Learning/Colab Notebooks/WMT20/data/dev.pe
+# valid-target-tags: /content/drive/My Drive/Proyectos/Machine Learning/Colab Notebooks/WMT20/data/dev.tags
+valid-sentence-scores: ./OpenKiwi/data/traindev/wmt20_dev.hter_avg
 
 ### GENERAL OPTS ###
 
 # Experiment Name for MLFlow
 experiment-name: EN-DE Train Estimator
 # Do not set or set to negative number for CPU
-gpu-id: 0
+# gpu-id: 0
