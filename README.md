@@ -1,8 +1,8 @@
 # Files in this Repo:
-QE_WMT20.ipynb: Jupyter notebook with the code to run
-clean_tsv.py : code to convert the WMT20 tsv format of training data into individual files that this repo can understand
-grid_search_QE.py : conducts a grid search on parameters found in the train_estimator.yaml file, so that you can find the best performing model without having to babysit scripts
-openkiwi.py : runs the code to train the QE model (using pre-trained predictor, and train_estimator.yaml file)
+- QE_WMT20.ipynb: Jupyter notebook with the code to run
+- clean_tsv.py : code to convert the WMT20 tsv format of training data into individual files that this repo can understand
+- grid_search_QE.py : conducts a grid search on parameters found in the train_estimator.yaml file, so that you can find the best performing model without having to babysit scripts
+- openkiwi.py : runs the code to train the QE model (using pre-trained predictor, and train_estimator.yaml file)
 
 # Steps to run:
 
