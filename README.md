@@ -13,3 +13,5 @@
 3. Create a folder called "runs" <./runs>, inside that folder create two folders "predictor" <./runs/predictor> and "estimator" <./runs/estimator>
 
 4. Run the QE WMT20.ipynb
+
+5. If you are using GPU, don't foget to change the %%yaml train_predictor at the last line "gpu-id: 1"
