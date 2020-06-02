@@ -10,6 +10,6 @@
 
 2. Create a folder called "data" <./data>
 
-3. Create a folder called "runs" <./runs>, inside that folder create two folders "predictor" and "estimator"
+3. Create a folder called "runs" <./runs>, inside that folder create two folders "predictor" <./runs/predictor> and "estimator" <./runs/estimator>
 
 4. Run the QE WMT20.ipynb
