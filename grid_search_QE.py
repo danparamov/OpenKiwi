@@ -52,7 +52,7 @@ for e in epochs:
 		for l in learning_rate_batch:
 			for d in dropout:
 				modify_yaml(e, h, l, d)
-				p = Popen(["python3", "openkiwi.py"], stdin=PIPE, stdout=PIPE, close_fds=True)
+				p = Popen(["python3", "./openkiwi.py"], stdin=PIPE, stdout=PIPE, close_fds=True)
 				returned_output = p.stdout.read()
 				file = open("results_all.txt", "a+")
 				setup = "################################ EPOCHS: " + str(e) + " hidden_LSTM: " + str(h) + " learning_rate_batch: " + str(l) + " dropout: " + str(d)
