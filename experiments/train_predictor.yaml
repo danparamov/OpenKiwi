@@ -3,7 +3,7 @@
 model: predictor
 
 # Model Files will be saved here
-output-dir: runs/predictor
+output-dir: ./runs/predictor
 
 #### MODEL SPECIFIC OPTS ####
 
@@ -51,16 +51,16 @@ valid-batch-size: 64
 ### DATA OPTS ###
 
 # Source and Target Files
-train-source: data/parallel/corpus.en
-train-target: data/parallel/corpus.de
+train-source: ./data/training/tinytrainen
+train-target: ./data/training/tinytrainde
 # Optionally load more data which is used only for vocabulary creation.
 # This is useful to reduce OOV words if the parallel data
 # and QE data are from different domains.
-extend-source-vocab: data/WMT17/word_level/en_de/train.src
-extend-target-vocab: data/WMT17/word_level/en_de/train.pe
+# extend-source-vocab: data/WMT17/word_level/en_de/train.src
+# extend-target-vocab: data/WMT17/word_level/en_de/train.pe
 # Optionally Specify Validation Sets
-valid-source: data/WMT17/word_level/en_de/dev.src
-valid-target: data/WMT17/word_level/en_de/dev.pe
+# valid-source: data/WMT17/word_level/en_de/dev.src
+# valid-target: data/WMT17/word_level/en_de/dev.pe
 # If No valid is specified, randomly split the train corpus
 split: 0.99
 
@@ -88,6 +88,6 @@ target-vocab-min-frequency: 1
 ### GENERAL OPTS ###
 
 # Experiment Name for MLFlow
-experiment-name: EN-DE Pretrain Predictor
+# experiment-name: EN-DE Pretrain Predictor
 # Do not set or set to negative number for CPU
 gpu-id: 0
