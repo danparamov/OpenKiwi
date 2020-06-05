@@ -4,7 +4,7 @@
 model: estimator
 
 # Model Files will be saved here
-output-dir: /OpenKiwi/runs/estimator
+output-dir: ./runs/estimator
 
 #### MODEL SPECIFIC OPTS ####
 
@@ -95,7 +95,7 @@ valid-batch-size: 8
 
 # load-model: path_to_estimator
 # load-pred-source: path_to_predictor_source_target
-load-pred-target: ./OpenKiwi/runs/predictor/best_model.torch
+load-pred-target: ./runs/predictor/best_model.torch
 
 
 ###  DATA ###
@@ -103,18 +103,18 @@ load-pred-target: ./OpenKiwi/runs/predictor/best_model.torch
 # Set to True to use target_tags in WMT format
 wmt20-format: false
 
-train-source: ./OpenKiwi/data/traindev/wmt20_train.en
-train-target: ./OpenKiwi/data/traindev/wmt20_train.de
+train-source: ./data/traindev/en-de/wmt20_train.en
+train-target: ./data/traindev/en-de/wmt20_train.de
 # train-pe: /content/drive/My Drive/Proyectos/Machine Learning/Colab Notebooks/data/train.pe
 # train-target-tags: /content/drive/My Drive/Proyectos/Machine Learning/Colab Notebooks/data/train.tags
-train-sentence-scores: ./OpenKiwi/data/traindev/wmt20_train.hter_avg
+train-sentence-scores: ./data/traindev/en-de/wmt20_train.hter_avg
 
 
-valid-source: ./OpenKiwi/data/traindev/wmt20_dev.en
-valid-target: ./OpenKiwi/data/traindev/wmt20_dev.de
+valid-source: ./data/traindev/en-de/wmt20_dev.en
+valid-target: ./data/traindev/en-de/wmt20_dev.de
 # valid-pe: /content/drive/My Drive/Proyectos/Machine Learning/Colab Notebooks/WMT20/data/dev.pe
 # valid-target-tags: /content/drive/My Drive/Proyectos/Machine Learning/Colab Notebooks/WMT20/data/dev.tags
-valid-sentence-scores: ./OpenKiwi/data/traindev/wmt20_dev.hter_avg
+valid-sentence-scores: ./data/traindev/en-de/wmt20_dev.hter_avg
 
 ### GENERAL OPTS ###
 
