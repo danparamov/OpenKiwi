@@ -7,12 +7,6 @@ import pandas as pd
 import kiwi
 import os
 
-# Create the folder data/training and runs/predictor
-path = "./data/training"
-path2 = "./runs/predictor"
-os.makedirs(path)
-os.makedirs(path2)
-
 # Download Data
 OK_url = 'https://www.quest.dcs.shef.ac.uk/wmt20_files_qe/training_en-de.tar.gz'
 utils.download_kiwi(OK_url, "./data/training")
