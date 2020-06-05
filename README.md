@@ -1,20 +1,26 @@
 # Files in this Repo:
-- QE_WMT20.ipynb: Jupyter notebook with the code to run
+- train_predictor.py: python script to download data, reduce the training data and run train_predictor.yaml file
 - clean_tsv.py : code to convert the WMT20 tsv format of training data into individual files that this repo can understand
-- grid_search_QE.py : conducts a grid search on parameters found in the train_estimator.yaml file, so that you can find the best performing model without having to babysit scripts
-- openkiwi.py : runs the code to train the QE model (using pre-trained predictor, and train_estimator.yaml file)
+- grid_search_QE.py : conducts a grid search on hyperparameters found in the train_estimator.yaml file, so that you can find the best performing model without having to babysit scripts
+- random_search_QE.py: conducts a random search on the hyperparameters found in the train_estimator.yaml file, so that you can find the best performing model without having to babysit scripts
+- openkiwi.py : runs the code to train the QE model (using pre-trained predictor model, and train_estimator.yaml file)
 
 # Steps to run:
 
-1. Install OpenKiwi- We want to install OpenKiwi as a local package. Follow these steps: https://unbabel.github.io/OpenKiwi/installation.html#as-local-package
+1. Clone this repo
 
-2. Create a folder called "data" <./data>
+2. Install Poetry via the recommended way:
 
-3. Create a folder called "runs" <./runs>, inside that folder create two folders "predictor" <./runs/predictor> and "estimator" <./runs/estimator>
+<curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python>
 
-4. Run the QE WMT20.ipynb
+3. To install all dependencies just run:
 
-5. If you are using GPU, don't foget to change the %%yaml train_predictor at the last line "gpu-id: 1"
+<poetry install>
+
+4. To download the data, reduce the training data to about 200MB and execute train_predictor.yaml - run the following:
+
+<python3 train_predictor.py>
+
 
 ## If interested on connecting Google Colab to Google Cloud follow these steps:
 
