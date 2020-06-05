@@ -11,15 +11,15 @@
 
 2. Install Poetry via the recommended way:
 
-<curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python>
+`curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python`
 
 3. To install all dependencies just run:
 
-<poetry install>
+`poetry install`
 
 4. To download the data, reduce the training data to about 200MB and execute train_predictor.yaml - run the following:
 
-<python3 train_predictor.py>
+`python3 train_predictor.py`
 
 
 ## If interested on connecting Google Colab to Google Cloud follow these steps:
