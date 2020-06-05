@@ -34,7 +34,6 @@ class ModelConfig:
 
     def __init__(self, vocabs):
         """Model Configuration Base Class.
-
         Args:
         vocabs: Dictionary Mapping Field Names to Vocabularies.
                 Must contain 'source' and 'target' keys
@@ -80,7 +79,6 @@ class Model(nn.Module):
 
     def __init__(self, vocabs, ConfigCls=ModelConfig, config=None, **kwargs):
         """Quality Estimation Base Class.
-
         Args:
             vocabs: Dictionary Mapping Field Names to Vocabularies.
             ConfigCls: ModelConfig Subclass
@@ -163,7 +161,6 @@ class Model(nn.Module):
 
     def preprocess(self, examples):
         """Preprocess Raw Data.
-
         Args:
             examples (list of dict): List of examples. Each Example is a dict
                                      with field strings as keys, and
@@ -175,7 +172,6 @@ class Model(nn.Module):
 
     def get_mask(self, batch, output):
         """Compute Mask of Tokens for side.
-
         Args:
             batch: Namespace of tensors
             side: String identifier.
@@ -204,7 +200,7 @@ class Model(nn.Module):
                 mask &= torch.as_tensor(
                     input_tensor != pad_id,
                     device=mask.device,
-                    dtype=torch.cuda.CharTensor,
+                    dtype=torch.uint8,
                 )
 
         return mask
