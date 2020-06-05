@@ -90,4 +90,4 @@ target-vocab-min-frequency: 1
 # Experiment Name for MLFlow
 # experiment-name: EN-DE Pretrain Predictor
 # Do not set or set to negative number for CPU
-gpu-id: 0
+# gpu-id: 0
