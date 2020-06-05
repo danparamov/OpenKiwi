@@ -18,12 +18,12 @@ my_tar.close()
 
 # Reduction of Data
 # English
-tinytrainen = pd.read_csv('./data/training/train.ende.en',chunksize=10000, sep='None, /n', engine='python')
-readme = tinytrainen.get_chunk(10000)
+tinytrainen = pd.read_csv('./data/training/train.ende.en',chunksize=1500000, sep='None, /n', engine='python')
+readme = tinytrainen.get_chunk(1500000)
 readme.to_csv(r'./data/training/tinytrainen', index=False, header=False)
 # German
-tinytrainde = pd.read_csv('./data/training/train.ende.de',chunksize=10000, sep='None, /n', engine='python')
-reader = tinytrainde.get_chunk(10000)
+tinytrainde = pd.read_csv('./data/training/train.ende.de',chunksize=1500000, sep='None, /n', engine='python')
+reader = tinytrainde.get_chunk(1500000)
 reader.to_csv(r'./data/training/tinytrainde', index=False, header=False)
 
 #Run train_predictor.yaml file
