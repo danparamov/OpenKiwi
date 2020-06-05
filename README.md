@@ -17,9 +17,31 @@
 
 `poetry install`
 
-4. To download the data, reduce the training data to about 200MB and execute train_predictor.yaml - run the following:
+4. Create the following folders
+`./data/training`
+`./data/traindev`
+`./runs/predictor`
+`./runs/estimator`
+
+5. To download the data to train the predictor model, reduce it to about 200MB and execute train_predictor.yaml - run the following:
 
 `python3 train_predictor.py`
+
+6. The estimator model will be trained on the parallel data used to train the NMT, to download this data use the following:
+
+`python3 download_trainingdata.py`
+
+7. To convert the WMT20 tsv format of training data into individual files that this repo can understand
+
+`python3 clean_dev.py`
+
+and 
+
+`python3 clean_train.py`
+
+8. To conduct the grid search on hyperparameters found in the train_estimator.yaml file
+
+`python3 grid_search_QE.py`
 
 
 ## If interested on connecting Google Colab to Google Cloud follow these steps:
