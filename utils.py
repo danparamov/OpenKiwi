@@ -18,7 +18,7 @@ nltk.download('punkt')
 
 # Download and extract methods heavily based on TorchNLP
 # see https://pytorchnlp.readthedocs.io/en/latest/_modules/torchnlp/download.html#download_file_maybe_extract
-def download_kiwi(url, directory="trained_models"):
+def download_kiwi(url, directory):
     """Download file at `url`. Extract if needed"""
 
     def _check_if_downloading(file):
