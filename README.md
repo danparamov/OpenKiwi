@@ -43,6 +43,11 @@ and
 
 `python3 grid_search_QE.py`
 
+9. To conduct the random search on hyperparameters found in the train_estimator.yaml file
+
+`python3 RS_QE.py`
+
+
 
 ## If interested on connecting Google Colab to Google Cloud follow these steps:
 
