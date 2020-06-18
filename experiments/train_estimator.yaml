@@ -13,7 +13,7 @@ output-dir: ./runs/estimator
 # These settings are ignored.
 
 # LSTM Settings
-hidden-est: 1024
+hidden-est: 32
 rnn-layers-est: 1
 dropout-est: 0.5
 # Use linear layer to reduce dimension prior to LSTM
@@ -72,10 +72,10 @@ checkpoint-early-stop-patience: 0
 log-interval: 100
 # LR. Currently ADAM is only optimizer supported.
 # 1e-3 * (batch_size / 32) seems to work well
-learning-rate: 1e-3
+learning-rate: 2e-3
 
-train-batch-size: 8
-valid-batch-size: 8
+train-batch-size: 64
+valid-batch-size: 64
 
 
 
