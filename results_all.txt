@@ -24,3 +24,75 @@ None
 None
 ################################ EPOCHS: 7 hidden_LSTM: 32 learning_rate_batch: (32, '1e-3') dropout: 0.5
 None
+################################ EPOCHS: 7 hidden_LSTM: 32 learning_rate_batch: (32, '1e-3') dropout: 0.5
+None
+################################ EPOCHS: 7 hidden_LSTM: 32 learning_rate_batch: (64, '2e-3') dropout: 0.5
+None
+################################ EPOCHS: 7 hidden_LSTM: 64 learning_rate_batch: (32, '1e-3') dropout: 0.5
+None
+################################ EPOCHS: 7 hidden_LSTM: 64 learning_rate_batch: (64, '2e-3') dropout: 0.5
+None
+################################ EPOCHS: 7 hidden_LSTM: 128 learning_rate_batch: (32, '1e-3') dropout: 0.5
+None
+################################ EPOCHS: 7 hidden_LSTM: 32 learning_rate_batch: (32, '1e-3') dropout: 0.5
+None
+################################ EPOCHS: 7 hidden_LSTM: 32 learning_rate_batch: (64, '2e-3') dropout: 0.5
+None
+################################ EPOCHS: 7 hidden_LSTM: 64 learning_rate_batch: (32, '1e-3') dropout: 0.5
+None
+################################ EPOCHS: 7 hidden_LSTM: 64 learning_rate_batch: (64, '2e-3') dropout: 0.5
+None
+################################ EPOCHS: 7 hidden_LSTM: 128 learning_rate_batch: (32, '1e-3') dropout: 0.5
+None
+################################ EPOCHS: 7 hidden_LSTM: 128 learning_rate_batch: (64, '2e-3') dropout: 0.5
+None
+################################ EPOCHS: 7 hidden_LSTM: 32 learning_rate_batch: (32, '1e-3') dropout: 0.5
+None
+################################ EPOCHS: 7 hidden_LSTM: 32 learning_rate_batch: (32, '1e-3') dropout: 0.5
+None
+################################ EPOCHS: 7 hidden_LSTM: 32 learning_rate_batch: (64, '2e-3') dropout: 0.5
+None
+################################ EPOCHS: epochs hidden_LSTM: hidden_LSTM learning_rate_batch: learning_rate_batch dropout: dropout
+None
+################################ EPOCHS: epochs hidden_LSTM: hidden_LSTM learning_rate_batch: learning_rate_batch dropout: dropout
+None
+################################ EPOCHS: epochs hidden_LSTM: hidden_LSTM learning_rate_batch: learning_rate_batch dropout: dropout
+None
+################################ EPOCHS: [7] hidden_LSTM: [32, 64, 128] learning_rate_batch: [(32, '1e-3'), (64, '2e-3')] dropout: [0.5]
+None
+################################ EPOCHS: [7] hidden_LSTM: [32, 64, 128] learning_rate_batch: [(32, '1e-3'), (64, '2e-3')] dropout: [0.5]
+None
+################################ EPOCHS: [7] hidden_LSTM: [32, 64, 128] learning_rate_batch: [(32, '1e-3'), (64, '2e-3')] dropout: [0.5]
+None
+################################ EPOCHS: 7 hidden_LSTM: (32, 64, 128) learning_rate_batch: ((32, '1e-3'), (64, '2e-3')) dropout: 0.5
+None
+################################ EPOCHS: 7 hidden_LSTM: 32 learning_rate_batch: (32, '1e-3') dropout: 0.5
+None
+################################ EPOCHS: 7 hidden_LSTM: 32 learning_rate_batch: (64, '2e-3') dropout: 0.5
+None
+################################ EPOCHS: 7 hidden_LSTM: 64 learning_rate_batch: (32, '1e-3') dropout: 0.5
+None
+################################ EPOCHS: 7 hidden_LSTM: 64 learning_rate_batch: (64, '2e-3') dropout: 0.5
+None
+################################ EPOCHS: 7 hidden_LSTM: 128 learning_rate_batch: (32, '1e-3') dropout: 0.5
+None
+################################ EPOCHS: 7 hidden_LSTM: 32 learning_rate_batch: (32, '1e-3') dropout: 0.5
+None
+################################ EPOCHS: 7 hidden_LSTM: 32 learning_rate_batch: (64, '2e-3') dropout: 0.5
+None
+################################ EPOCHS: 7 hidden_LSTM: 32 learning_rate_batch: (32, '1e-3') dropout: 0.5
+None
+################################ EPOCHS: 7 hidden_LSTM: 32 learning_rate_batch: (64, '2e-3') dropout: 0.5
+None
+################################ EPOCHS: 7 hidden_LSTM: 64 learning_rate_batch: (32, '1e-3') dropout: 0.5
+None
+################################ EPOCHS: 7 hidden_LSTM: 32 learning_rate_batch: (32, '1e-3') dropout: 0.5
+None
+################################ EPOCHS: 7 hidden_LSTM: 32 learning_rate_batch: (64, '2e-3') dropout: 0.5
+None
+################################ EPOCHS: 7 hidden_LSTM: 64 learning_rate_batch: (32, '1e-3') dropout: 0.5
+None
+################################ EPOCHS: 7 hidden_LSTM: 32 learning_rate_batch: (32, '1e-3') dropout: 0.5
+None
+################################ EPOCHS: 7 hidden_LSTM: 32 learning_rate_batch: (64, '2e-3') dropout: 0.5
+None
