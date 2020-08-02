@@ -13,7 +13,7 @@ output-dir: ./runs/estimator
 # These settings are ignored.
 
 # LSTM Settings
-hidden-est: 1024
+hidden-est: 64
 rnn-layers-est: 1
 dropout-est: 0.5
 # Use linear layer to reduce dimension prior to LSTM
@@ -39,8 +39,6 @@ sentence-ll: False
 # Predict Binary Label for each sentence, indicating hter == 0.0
 # Requires setting train-sentence-scores, valid-sentence-scores
 binary-level: False
-
-# WMT 20 Format Settings #
 
 # Predict target tags. Requires train-target-tags, valid-target-tags to be set.
 predict-target: false
@@ -74,8 +72,8 @@ log-interval: 100
 # 1e-3 * (batch_size / 32) seems to work well
 learning-rate: 1e-3
 
-train-batch-size: 8
-valid-batch-size: 8
+train-batch-size: 64
+valid-batch-size: 64
 
 
 
@@ -94,7 +92,7 @@ valid-batch-size: 8
 
 # load-model: path_to_estimator
 # load-pred-source: path_to_predictor_source_target
-load-pred-target: ./runs/predictor/best_model.torch
+load-pred-target: ./runs/predictor/model.torch
 
 
 ###  DATA ###
