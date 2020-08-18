@@ -44,6 +44,8 @@ from kiwi.trainers.linear_word_qe_trainer import LinearWordQETrainer
 from kiwi.trainers.trainer import Trainer
 from kiwi.trainers.utils import optimizer_class
 
+from kiwi.models.predictor_estimator import * #DanielParamo
+
 logger = logging.getLogger(__name__)
 
 
@@ -150,7 +152,7 @@ def run(ModelClass, output_dir, pipeline_options, model_options):
 
     Returns:
         The trainer object
-    """
+    """     
     model_name = getattr(ModelClass, "title", ModelClass.__name__)
     logger.info("Training the {} model".format(model_name))
     # FIXME: make sure all places use output_dir
@@ -175,6 +177,12 @@ def run(ModelClass, output_dir, pipeline_options, model_options):
         device_id = pipeline_options.gpu_id
 
     vocabs = utils.fields_to_vocabs(datasets[0].fields)
+
+    #Daniel Paramo
+    logger.info("Checkpoint1")
+    model1 = ModelClass.from_options(vocabs=vocabs, opts=model_options)
+    optimize = ModelClass.optimize(model1)
+    #
 
     trainer = retrieve_trainer(
         ModelClass,

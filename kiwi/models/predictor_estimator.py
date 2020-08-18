@@ -39,8 +39,12 @@ from kiwi.models.model import Model
 from kiwi.models.predictor import Predictor, PredictorConfig
 from kiwi.models.utils import apply_packed_sequence, make_loss_weights
 
-logger = logging.getLogger(__name__)
+from sklearn.datasets import make_classification #DanielParamo
+from sklearn.datasets import make_regression #DanielParamo
+from sklearn.model_selection import RandomizedSearchCV #DanielParamo
+from skorch import NeuralNetRegressor #DanielParamo
 
+logger = logging.getLogger(__name__)
 
 class EstimatorConfig(PredictorConfig):
     def __init__(
@@ -81,7 +85,6 @@ class EstimatorConfig(PredictorConfig):
         self.target_bad_weight = target_bad_weight
         self.source_bad_weight = source_bad_weight
         self.gaps_bad_weight = gaps_bad_weight
-
 
 @Model.register_subclass
 class Estimator(Model):
@@ -247,6 +250,44 @@ class Estimator(Model):
         if self.config.binary_level:
             self.xent_binary = nn.CrossEntropyLoss(reduction='sum')
 
+    #DanielParamo
+    @staticmethod
+    def optimize(model):
+
+        logger.info("Checkpoint2")
+        X = model.predictor_src #+ self.predictor_tgt
+        y = model.predictor_tgt
+        # y = model.config.sentence_level
+        print(X)
+        print(y)
+
+        #Hyperparameter Tuning with Random Search
+        net = NeuralNetRegressor(
+            model,
+            max_epochs=10,
+            lr=0.1,
+            # Shuffle training data on each epoch
+            iterator_train__shuffle=True,
+        )
+
+        net.fit(X, y)
+        y_proba = net.predict_proba(X)
+
+        # deactivate skorch-internal train-valid split and verbose logging
+        net.set_params(train_split=False, verbose=0)
+        params = {
+            'epochs': [7],
+            'hidden_LSTM': [32, 64, 128],
+            'learning_rate_batch': [(32, '1e-3'), (64, '2e-3')],
+            'dropout': [0.5],
+        }
+        gs = RandomizedSearchCV(net, params, refit=False, cv=3, scoring='accuracy', verbose=2)
+
+        gs.fit(X, y)
+        print("best score: {:.3f}, best params: {}".format(gs.best_score_, gs.best_params_))
+        return
+    #
+
     @staticmethod
     def fieldset(*args, **kwargs):
         from kiwi.data.fieldsets.predictor_estimator import build_fieldset
@@ -279,8 +320,8 @@ class Estimator(Model):
         if opts.load_pred_source:
             predictor_src = Predictor.from_file(opts.load_pred_source)
         if opts.load_pred_target:
-            predictor_tgt = Predictor.from_file(opts.load_pred_target)
-
+            predictor_tgt = Predictor.from_file(opts.load_pred_target)                   
+        
         model = Estimator(
             vocabs,
             predictor_tgt=predictor_tgt,
